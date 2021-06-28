@@ -1,11 +1,12 @@
-import React, {useState, useEffect} from 'react';
+import * as React from 'react';
+import {useState, useEffect} from 'react';
 import ReadMessage from '../ReadMessage';
 
 export const ShowMessage = () => {
     const [message, setMessage] = useState("");
 
     useEffect(() => {
-        ReadMessage(data => {
+        ReadMessage((data: any) => {
             setMessage(data.message);
         });
     }, []);

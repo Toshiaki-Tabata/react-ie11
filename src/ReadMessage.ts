@@ -8,7 +8,7 @@ const axiosInstance = axios.create({
     responseType: 'json',
 });
 
-export const ReadMessage = (callback) => {
+export const ReadMessage = (callback: (data: any) => void) => {
     axiosInstance.get('/message.json')
     .then(response => {
         console.log(response.data);
